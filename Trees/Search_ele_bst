@@ -1,0 +1,23 @@
+public static void Search(int key)
+    {
+        Search(root,key);
+    }
+    public static void Search(Node root,int key)
+    {
+        if(root==null)
+        {
+            System.out.println("ELement not found");
+        }
+        else if(root.key==key)
+        {
+              System.out.println("Element found");
+        }
+        else if(root.key>key)
+        {
+          Search(root.left,key);
+        }
+        else 
+        {
+            Search(root.right,key);
+        }
+    }

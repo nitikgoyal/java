@@ -1,0 +1,64 @@
+public static void spiralfn(Node root) 
+    { 
+        int n=height(root); 
+         //System.out.println(n);
+        boolean b = false; 
+        for (int i=1;i<=n+1;i++)
+        { 
+            spiral(root,i,b);
+            b=!b;
+        } 
+    } 
+ public static void spiral(Node root,int i,Boolean b) 
+ {
+     if(root==null)
+        {
+            return;
+        }
+        
+         if(i==1)
+         {
+             System.out.println(root.key);
+             
+         }
+         else if(i>1)
+         {
+             if(b!=false)
+             {
+             spiral(root.left,i-1,b);
+             spiral(root.right,i-1,b);
+             }
+             else
+             {
+                  spiral(root.right,i-1,b);
+                 spiral(root.left,i-1,b);
+             }
+            
+        } 
+    }
+    public static void aufau(Node root)
+    {  
+        boolean b=false;
+        int n=height(root);
+        System.out.println(root.key);
+   for(int i=1;i<n+1;i++)
+    {
+        if(root!=null)
+        {
+                
+                    if(b!=false)
+                    {
+                        aufau(root.right);
+                        aufau(root.left);
+                        break;
+                    }
+                    else
+                    { 
+                        aufau(root.left);
+                        aufau(root.right); 
+                        break;
+                    }
+                } 
+            }
+             b=!b;
+        }
